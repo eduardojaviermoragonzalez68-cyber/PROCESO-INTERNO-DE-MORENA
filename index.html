@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDUARDO JAVIER MORA GONZALEZ - KANASIN</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#7a0a12;font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:900px;margin:0 auto;background:#fff}
+.topbar{background:#000;color:#ffcc00;font-size:9px;padding:5px;text-align:center;position:sticky;top:0;z-index:200}
+.logo-bar{display:flex;align-items:center;padding:8px 12px;background:#fff;position:sticky;top:18px;z-index:200}
+.logo-icon{width:65px;height:65px;background:#7a0a12;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#ffcc00;font-weight:900;font-size:10px;text-align:center}
+.logo-text{margin-left:10px;color:#7a0a12;font-weight:900;line-height:1.1}
+.logo-text b{font-size:15px}
+.logo-text span{font-size:10px;color:#000;font-weight:400;display:block}
+.menu{background:#7a0a12;display:flex;overflow-x:auto;border-top:3px solid #ffcc00;border-bottom:3px solid #ffcc00;position:sticky;top:89px;z-index:200}
+.menu-item{color:#fff;padding:13px 15px;font-size:10px;font-weight:900;white-space:nowrap;cursor:pointer;position:relative;border-right:1px solid #a00}
+.menu-item:hover{background:#a00}
+.submenu{display:none;position:absolute;top:100%;left:0;background:#7a0a12;min-width:300px;z-index:100;border:2px solid #ffcc00}
+.menu-item:hover .submenu{display:block}
+.submenu div{padding:11px;color:#fff;font-size:11px;border-bottom:1px solid #a00;cursor:pointer;font-weight:700}
+.submenu div:hover{background:#fff;color:#7a0a12}
+.hero-banner{background:linear-gradient(90deg,#7a0a12 60%,#ffcc00);color:#fff;padding:14px}
+.img-main{width:100%;display:block;border-top:4px solid #ffcc00;border-bottom:4px solid #ffcc00}
+.img-perfil{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid #ffcc00;display:block;margin:10px auto}
+.ventana{display:none;padding:12px;background:#fffbe6;border:2px solid #7a0a12;margin:10px;border-radius:8px}
+.ventana.activa{display:block}
+.ventana h4{background:#7a0a12;color:#fff;padding:8px;border-radius:6px;font-size:12px;margin-bottom:8px}
+.ventana p,.ventana li{font-size:11px;line-height:1.35;margin-top:6px}
+.file{border:1px solid #7a0a12;padding:8px;margin:6px 0;background:#fff;border-radius:6px;font-size:11px}
+.file a{color:#7a0a12;font-weight:900}
+.dates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0}
+.date-box{border:2px solid #7a0a12;padding:6px;text-align:center;background:#fff;border-radius:6px}
+.date-box span{font-weight:900;font-size:15px;display:block}
+.btn-wsp{background:#25D366;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;display:inline-block;margin:6px;font-size:12px}
+.btn-correo{background:#0d47a1;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;display:inline-block;margin:6px;font-size:12px}
+.legal{background:#111;color:#ccc;font-size:7.5px;padding:10px;text-align:justify}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topbar">z68-cyber.github.io | MORENA La Esperanza de Mexico | KANASIN YUCATAN | CONCIENCIA PURA 24/7</div>
 
+<div class="logo-bar">
+<div class="logo-icon">❤️<br>KANASIN</div>
+<div class="logo-text"><b>NOS MUEVE EL AMOR POR<br>KANASIN</b><span>2024 ∞ 2027 - EDUARDO JAVIER MORA GONZALEZ</span></div>
+</div>
+
+<div class="menu">
+<div class="menu-item" onclick="abrir('inicio')">INICIO</div>
+<div class="menu-item" onclick="abrir('biografia')">BIOGRAFÍA</div>
+<div class="menu-item">ASAMBLEAS ▼
+<div class="submenu">
+<div onclick="abrir('asamblea-informativa')">1. ASAMBLEA INFORMATIVA</div>
+<div onclick="abrir('asamblea-constitutiva')">2. ASAMBLEA CONSTITUTIVA CDT</div>
+<div onclick="abrir('asamblea-resolutiva')">3. ASAMBLEA RESOLUTIVA / 3ra</div>
+</div>
+</div>
+<div class="menu-item">GALERÍA ▼
+<div class="submenu">
+<div onclick="abrir('galeria-videos')">🎥 VIDEOS REGENERACION</div>
+<div onclick="abrir('galeria-fotos')">📸 FOTOS Y COLONIAS</div>
+</div>
+</div>
+<div class="menu-item" onclick="abrir('gestiones')">AQUÍ SUBE TUS GESTIONES</div>
+<div class="menu-item">MI COMPROMISO 4T ▼
+<div class="submenu">
+<div onclick="abrir('compromiso')">MI COMPROMISO CON LA 4T</div>
+<div onclick="abrir('vision')">PDF VISIÓN METROPOLITANA 4T</div>
+<div onclick="abrir('calendario')">CALENDARIO OFICIAL</div>
+</div>
+</div>
+</div>
+
+<div class="hero-banner">
+<h1>Amor X <b>Kanasin</b> - EDUARDO JAVIER MORA GONZALEZ</h1>
+<p>Morita el Mototaxista - 10 AÑOS LLEVANDO A LAS FAMILIAS DE KANASIN</p>
+</div>
+
+<img class="img-main" src="foto-principal.jpg">
+<img class="img-perfil" src="image2.jpg">
+
+<div id="inicio" class="ventana activa">
+<h4>INICIO - EL VERDADERO CAMBIO LO HACEMOS TODOS</h4>
+<p><b>Con el Pueblo Todo, Sin el Pueblo Nada</b><br>Aspirante Coordinación Municipal CDT Kanasin - Proceso Interno MORENA 2026</p>
+<div class="dates">
+<div class="date-box"><b>REGISTRO</b><span>18 OCT 2026</span></div>
+<div class="date-box"><b>LIMITE</b><span>13 DIC 2026</span></div>
+<div class="date-box"><b>RESULTADOS</b><span>31 DIC 2026</span></div>
+</div>
+</div>
+
+<div id="biografia" class="ventana">
+<h4>BIOGRAFÍA - MORITA EL MOTOTAXISTA</h4>
+<p>10 AÑOS LLEVANDO A LAS FAMILIAS DE KANASIN. Soy Eduardo Javier Mora Gonzalez, del pueblo, trabajo 24/7 Conciencia Pura. Conozco cada colonia. Principios No Mentir No Robar No Traicionar Art 1-3 Estatuto. Protagonista Cambio Verdadero Art 4-6. Sin antecedentes VPMRG Art 46.</p>
+</div>
+
+<div id="asamblea-informativa" class="ventana">
+<h4>1. ASAMBLEA INFORMATIVA - Art 15-20 CDT</h4>
+<p>Primera reunión mínimo 5 protagonistas informar proceso interno MORENA derechos obligaciones Art 4-6 principios Art 1-3. LIPEEY Art 196 y 198 actividad ordinaria no acto anticipado.</p>
+<div id="pdf-informativa"></div>
+</div>
+
+<div id="asamblea-constitutiva" class="ventana">
+<h4>2. ASAMBLEA CONSTITUTIVA CDT</h4>
+<p>Constitución formal Comité Defensa Transformación con acta lista asistencia fotos plan acción territorial Art 19-20. Quórum mitad más uno Art 19 Sesión cada 3 meses.</p>
+<div id="pdf-constitutiva"></div>
+</div>
+
+<div id="asamblea-resolutiva" class="ventana">
+<h4>3. ASAMBLEA RESOLUTIVA / 3ra ASAMBLEA</h4>
+<p>Tercera asamblea donde se resuelve plan trabajo compromisos estructura territorial resolutivo final entrega Coordinación Distrital y Estatal Art 26-33.</p>
+<div id="pdf-resolutiva"></div>
+</div>
+
+<div id="galeria-videos" class="ventana">
+<h4>GALERÍA VIDEOS - REGENERACION</h4>
+<div id="videos-regeneracion"></div>
+</div>
+
+<div id="galeria-fotos" class="ventana">
+<h4>GALERÍA FOTOS - COLONIAS</h4>
+<div id="colonias-lista"></div>
+</div>
+
+<div id="gestiones" class="ventana">
+<h4>AQUÍ SUBE TUS GESTIONES - CON FOTOS O REPORTA TU COLONIA</h4>
+<p>Toma foto bache lámpara fuga basura mándala por WhatsApp o correo con colonia y calle. Nosotros la subimos automático.</p>
+<a class="btn-wsp" href="https://wa.me/529991234567?text=Hola%20Morita%20soy%20de%20la%20colonia:" target="_blank">📱 REPORTAR WHATSAPP</a>
+<a class="btn-correo" href="mailto:eduardojaviermoragonzalez@gmail.com?subject=Reporte%20Colonia" target="_blank">📧 REPORTAR CORREO</a>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
+<div><b>💡 Alumbrado</b><div id="gestion-alumbrado"></div></div>
+<div><b>🚧 Bacheo</b><div id="gestion-bacheo"></div></div>
+<div><b>💧 Agua</b><div id="gestion-agua"></div></div>
+<div><b>🗑️ Basura</b><div id="gestion-basura"></div
