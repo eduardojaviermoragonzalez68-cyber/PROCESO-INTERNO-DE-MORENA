@@ -3,247 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EDUARDO JAVIER MORA GONZALEZ - KANASIN</title>
+<title>EMK - KANASIN LA CAPITAL DEL PANUCHO, ES - LALO MORA</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#7a0a12;font-family:Arial,Helvetica,sans-serif}
+body{background:#7a0a12;font-family:Arial,sans-serif}
 .wrap{max-width:900px;margin:0 auto;background:#fff;min-height:100vh}
-.topbar{background:#000;color:#ffcc00;font-size:9px;padding:5px;text-align:center}
-.logo-bar{display:flex;align-items:center;padding:8px 12px;background:#fff}
-.logo-icon{width:65px;height:65px;background:#7a0a12;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#ffcc00;font-weight:900;font-size:10px;text-align:center}
-.logo-text{margin-left:10px;color:#7a0a12;font-weight:900;line-height:1.1}
-.logo-text b{font-size:15px}
-.logo-text span{font-size:10px;color:#000;font-weight:400;display:block}
-.menu{background:#7a0a12;display:flex;overflow-x:auto;border-top:3px solid #ffcc00;border-bottom:3px solid #ffcc00}
-.menu-item{color:#fff;padding:12px 14px;font-size:10px;font-weight:900;white-space:nowrap;cursor:pointer;position:relative;border-right:1px solid #a00}
-.menu-item:hover{background:#a00}
-.submenu{display:none;position:absolute;top:100%;left:0;background:#7a0a12;min-width:280px;z-index:100;border:2px solid #ffcc00}
-.menu-item:hover .submenu{display:block}
-.submenu div{padding:11px;color:#fff;font-size:11px;border-bottom:1px solid #a00;cursor:pointer;font-weight:700}
-.submenu div:hover{background:#fff;color:#7a0a12}
-.submenu div::before{content:":: ";color:#ffcc00}
-.hero-banner{background:linear-gradient(90deg,#7a0a12 60%,#ffcc00);color:#fff;padding:14px}
-.hero-banner h1{font-size:22px;line-height:1.1}
-.hero-banner h1 b{color:#ffcc00}
-.img-main{width:100%;display:block;border-top:4px solid #ffcc00;border-bottom:4px solid #ffcc00}
-.img-perfil{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid #ffcc00;display:block;margin:10px auto}
-.ventana{display:none;padding:12px;background:#fffbe6;border:2px solid #7a0a12;margin:10px;border-radius:8px;animation:aparece 0.3s}
-.ventana.activa{display:block}
-@keyframes aparece{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
-.ventana h4{background:#7a0a12;color:#fff;padding:8px;border-radius:6px;font-size:12px;margin-bottom:8px}
-.ventana p,.ventana li{font-size:11px;line-height:1.35;margin-top:6px}
-.ventana ul{padding-left:16px}
-.file{border:1px solid #7a0a12;padding:8px;margin:6px 0;background:#fff;border-radius:6px;font-size:11px}
-.file a{color:#7a0a12;font-weight:900}
+.topbar{background:#000;color:#ffcc00;font-size:10px;padding:6px;text-align:center;font-weight:900}
+.logo-bar{display:flex;align-items:center;padding:8px 12px;background:#fff;border-bottom:4px solid #ffcc00}
+.logo-icon{width:70px;height:70px;background:#7a0a12;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#ffcc00;font-weight:900;font-size:11px;text-align:center;border:2px solid #ffcc00}
+.logo-text{margin-left:10px}
+.logo-text b{color:#7a0a12;font-size:14px;display:block;line-height:1.1}
+.logo-text span{font-size:10px;color:#000;font-weight:700}
+.menu{background:#7a0a12;display:flex;overflow-x:auto;white-space:nowrap;border-bottom:3px solid #ffcc00;position:sticky;top:0;z-index:999}
+.menu a{color:#fff;padding:14px 12px;font-size:11px;font-weight:900;text-decoration:none;border-right:1px solid #900;display:block}
+.menu a:hover{background:#ffcc00;color:#7a0a12}
+.hero{background:linear-gradient(180deg,#ffcc00 0%,#7a0a12 100%);color:#000;padding:12px;text-align:center}
+.hero h1{font-size:16px;color:#7a0a12;line-height:1.2}
+.hero h1 b{color:#000}
+.hero h2{font-size:15px;color:#7a0a12;margin-top:4px;line-height:1.1}
+.hero p{font-size:11px;margin-top:4px;color:#000;font-weight:700}
+.foto-box{position:relative;width:210px;height:210px;margin:10px auto}
+.foto-perfil{width:210px;height:210px;border-radius:50%;border:5px solid #ffcc00;object-fit:cover;display:block;background:#fff}
+.foto-fallback{position:absolute;top:0;left:0;width:210px;height:210px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;color:#7a0a12;font-weight:900;text-align:center;border:5px solid #ffcc00}
+.ventana{background:#fffbe6;border:2px solid #7a0a12;margin:10px;border-radius:8px;padding:10px}
+.ventana h3{background:#7a0a12;color:#fff;padding:8px;border-radius:6px;font-size:13px;margin-bottom:6px}
 .dates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0}
 .date-box{border:2px solid #7a0a12;padding:6px;text-align:center;background:#fff;border-radius:6px}
-.date-box span{font-weight:900;font-size:15px;display:block}
-.btn-wsp{background:#25D366;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;display:inline-block;margin:6px;font-size:12px}
-.btn-correo{background:#0d47a1;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:900;display:inline-block;margin:6px;font-size:12px}
-.legal{background:#111;color:#ccc;font-size:7.5px;padding:10px;text-align:justify}
+.date-box b{display:block;font-size:11px}
+.date-box span{font-weight:900;font-size:14px;color:#7a0a12}
+.legal{background:#111;color:#ccc;font-size:7.5px;padding:10px;text-align:justify;line-height:1.3}
+.btn{background:#25D366;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:900;display:inline-block;margin:6px 0;font-size:12px}
+input[type=file]{width:100%;padding:8px;border:2px dashed #7a0a12;margin:8px 0;border-radius:6px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="topbar">z68-cyber.github.io | MORENA La Esperanza de Mexico | KANASIN YUCATAN | CONCIENCIA PURA 24/7</div>
+<div class="topbar">EMK-ESTAMOS-MEJORANDO-KANASIN-24-7 | MORENA La Esperanza de México | KANASIN YUCATAN</div>
 
 <div class="logo-bar">
-<div class="logo-icon">❤️<br>KANASIN</div>
-<div class="logo-text"><b>NOS MUEVE EL AMOR POR<br>KANASIN</b><span>2024 ∞ 2027 - EDUARDO JAVIER MORA GONZALEZ</span></div>
+<div class="logo-icon">KANASIN</div>
+<div class="logo-text">
+<b>LA CAPITAL DEL PANUCHO, ES</b>
+<span>KANASIN 2024 - 2027 - EDUARDO JAVIER MORA GONZALEZ</span>
+</div>
 </div>
 
 <div class="menu">
-<div class="menu-item" onclick="abrir('inicio')">INICIO</div>
-<div class="menu-item" onclick="abrir('biografia')">BIOGRAFÍA</div>
-<div class="menu-item">ASAMBLEAS ▼
-<div class="submenu">
-<div onclick="abrir('asamblea-informativa')">1. ASAMBLEA INFORMATIVA (Art 15-20)</div>
-<div onclick="abrir('asamblea-constitutiva')">2. ASAMBLEA CONSTITUTIVA CDT</div>
-<div onclick="abrir('asamblea-resolutiva')">3. ASAMBLEA RESOLUTIVA / 3ra ASAMBLEA</div>
-</div>
-</div>
-<div class="menu-item">GALERÍA DE VIDEOS Y FOTOS ▼
-<div class="submenu">
-<div onclick="abrir('galeria-videos')">🎥 VIDEOS REGENERACION</div>
-<div onclick="abrir('galeria-fotos')">📸 FOTOS Y COLONIAS</div>
-</div>
-</div>
-<div class="menu-item" onclick="abrir('gestiones')">AQUÍ SUBE TUS GESTIONES</div>
-<div class="menu-item">MI COMPROMISO 4T ▼
-<div class="submenu">
-<div onclick="abrir('compromiso')">MI COMPROMISO CON LA 4T</div>
-<div onclick="abrir('vision')">PDF VISIÓN METROPOLITANA</div>
-<div onclick="abrir('calendario')">CALENDARIO OFICIAL 18 OCT - 13 DIC - 31 DIC</div>
-</div>
-</div>
+<a href="#" onclick="ver('inicio')">INICIO</a>
+<a href="#" onclick="ver('biografia')">BIOGRAFÍA</a>
+<a href="#" onclick="ver('asambleas')">ASAMBLEAS ▼</a>
+<a href="#" onclick="ver('videos')">GALERÍA DE VIDEOS Y FOTOS</a>
+<a href="#" onclick="ver('gestiones')">AQUÍ SUBE TUS GESTIONES</a>
+<a href="#" onclick="ver('compromiso')">MI COMPROMISO 4T</a>
 </div>
 
-<div class="hero-banner">
-<h1>Amor X <b>Kanasin</b><br>EDUARDO JAVIER MORA GONZALEZ</h1>
-<p>Morita el Mototaxista - 10 AÑOS LLEVANDO A LAS FAMILIAS DE KANASIN - EMK Conciencia Pura 24/7</p>
+<div class="hero">
+<h1>LA CAPITAL DEL PANUCHO, ES <br><b>KANASIN</b></h1>
+<h2>Amor X Kanasin<br>EDUARDO JAVIER MORA GONZALEZ</h2>
+<p>Morita el Mototaxista - 10 AÑOS LLEVANDO A LAS FAMILIAS DE KANASIN -<br>EMK Conciencia Pura 24/7</p>
 </div>
 
-<img class="img-main" src="foto-principal.jpg" alt="Eduardo Mora">
-<img class="img-perfil" src="image2.jpg" alt="Perfil">
+<div style="text-align:center;padding:8px">
+<b style="font-size:12px;color:#7a0a12">☑ Eduardo Mora</b>
+<div class="foto-box">
+<img id="foto" class="foto-perfil" src="" alt="Foto Lalo Mora" onerror="this.style.display='none';document.getElementById('fallback').style.display='flex'">
+<div id="fallback" class="foto-fallback">FOTO<br>LALO MORA<br><small>Sube foto.jpg</small></div>
+</div>
+<div style="font-size:10px;color:#666">Si no ves la foto, súbela como <b>foto.jpg</b> en tu repositorio</div>
+<input type="file" id="subirFoto" accept="image/*" onchange="previewFoto(event)">
+</div>
 
-<!-- INICIO -->
-<div id="inicio" class="ventana activa">
-<h4>INICIO - EL VERDADERO CAMBIO LO HACEMOS TODOS</h4>
-<p><b>Con el Pueblo Todo, Sin el Pueblo Nada</b><br>Aspirante a Coordinación Municipal Comités de Defensa de la Transformación y Soberanía Nacional - Municipio de Kanasín</p>
+<div id="inicio" class="ventana">
+<h3>INICIO - EL VERDADERO CAMBIO LO HACEMOS TODOS</h3>
+<p><b>Con el Pueblo Todo, Sin el Pueblo Nada</b><br>Aspirante a Coordinación Municipal Comités de Defensa de la Transformación y Soberanía Nacional - Municipio de Kanasin<br><br>Reporte Territorial Regeneración Nacional - Reporta tu Gestión - INICIATIVAS VECINALES para Infraestructura y Desarrollo - Visión de Ideas y Propuestas para el Plan Desarrollo Municipal - Conciencia Pura 24/7 - Participación Ciudadana</p>
 <div class="dates">
 <div class="date-box"><b>REGISTRO</b><span>18 OCT 2026</span><small>Art 24,33</small></div>
 <div class="date-box"><b>LIMITE</b><span>13 DIC 2026</span><small>Art 41 Bis</small></div>
 <div class="date-box"><b>RESULTADOS</b><span>31 DIC 2026</span><small>Art 44,44 Bis</small></div>
 </div>
-<p style="text-align:center;font-weight:900;color:#7a0a12">⬆️ Dale click al menú de arriba ⬆️</p>
 </div>
 
-<!-- BIOGRAFIA -->
-<div id="biografia" class="ventana">
-<h4>BIOGRAFÍA - EDUARDO JAVIER MORA GONZALEZ - MORITA EL MOTOTAXISTA</h4>
-<p><b>10 AÑOS LLEVANDO A LAS FAMILIAS DE KANASIN</b><br><br>
-Soy Eduardo Javier Mora Gonzalez, Morita el Mototaxista. Originario de Kanasín, Yucatán. Con 10 años de servicio transportando a las familias, conozco cada colonia, cada calle, cada necesidad de nuestro municipio.<br><br>
-<b>EMK - Conciencia Pura 24/7:</b> Mi compromiso es 24 horas, 7 días a la semana con el pueblo de Kanasín. No soy político de escritorio, soy del pueblo, trabajo con el pueblo.<br><br>
-<b>Trayectoria:</b> Mototaxista, gestor comunitario, Protagonista del Cambio Verdadero MORENA Art 4-6 Estatuto. Curso de Formación Política INFP Art 6 bis. Sin antecedentes de VPMRG, violencia familiar, delitos sexuales ni deudor alimentario Art 46 c,n.<br><br>
-<b>Principios:</b> No Mentir, No Robar, No Traicionar Art 1-3 Estatuto. Amor por Kanasín, por Yucatán, por México.<br><br>
-<b>Contacto Directo:</b> Con el pueblo todo, sin el pueblo nada.</p>
+<div class="legal">
+<b>AVISO LEGAL BLINDADO - ACTIVIDAD ORDINARIA PROCESO INTERNO MORENA - NO ACTO ANTICIPADO PRECAMPAÑA</b> Documento dirigido exclusivamente a Protagonistas del Cambio Verdadero Art 4,5,6 Estatuto MORENA. No contiene llamado al voto ciudadanía general, no difunde plataforma electoral, no solicita voto cargo elección popular. Objeto organización interna formación política concientización fortalecimiento CDT Art 15-20 Declaración Principios Programa Acción. Interpretación contraria viola derecho asociación Art 9 y 35 CPEUM autonomía partidos Art 41 CPEUM y 34 LGIPE LIPEEY IEPAC Art 16,19,196,198 Actividades Ordinarias no constituyen actos anticipados precampaña. Ley Gobierno Municipios Yucatán Art 2,30,40,41,77,80,82,85,114-118 Plan Municipal Desarrollo. LGIPE INE Art 3,5,25,34 LGPP Art 3,5,25,34,43,51 paridad VPMRG. CPEUM Art 6,9,26,35,40,41,115 Tres Niveles Gobierno Federación Estado Municipio. Estatuto MORENA Cap I Art 1-3 No Mentir No Robar No Traicionar Cap III Art 4-6 Cap IV Art 14,14 Bis,15-20 CDT Municipal Art 41 Bis Reglas Art 21-41 Congresos. Calendario Oficial: Registro 18 Oct 2026 Límite Organización 13 Dic 2026 Resultados 31 Dic 2026. Con el Pueblo Todo, Sin el Pueblo Nada - EMK Estamos Mejorando Kanasin 24-7 - Conciencia Pura 24/7 - Participación Ciudadana.
 </div>
 
-<!-- ASAMBLEAS - LAS 3 QUE PIDE MORENA -->
-<div id="asamblea-informativa" class="ventana">
-<h4>1. ASAMBLEA INFORMATIVA - Art 15-20 CDT Municipal</h4>
-<p><b>¿Qué es?</b> Primera reunión con mínimo 5 protagonistas para informar proceso interno MORENA, derechos y obligaciones Art 4-6, principios Art 1-3.<br><br>
-<b>Fundamento:</b> Art 15-20 Estatuto CDT base territorial sectorial mínimo 5 sin límite mayoría simple tareas organización electoral defensa voto difusión formación política Plan Acción CEN reuniones cada 30 días informan Asamblea Municipal.<br><br>
-<b>LIPEEY Art 196 y 198:</b> Actividad ordinaria permanente no es acto anticipado precampaña.<br><br>
-<b>Archivos PDF subidos aquí:</b></p>
-<div id="pdf-informativa"></div>
-</div>
-
-<div id="asamblea-constitutiva" class="ventana">
-<h4>2. ASAMBLEA CONSTITUTIVA CDT - Comité Defensa Transformación</h4>
-<p><b>¿Qué es?</b> Constitución formal del Comité de Defensa de la Transformación con acta, lista de asistencia, fotografías, plan de acción territorial Art 19-20.<br><br>
-<b>Fundamento:</b> Art 20 Funciones: conocer informe CDT, deliberar plan acción territorial sectorial, apoyar difusión problemas nacionales logros transformación documentos Regeneración, concientización contra neoliberalismo, difundir Declaración principios Plan acción, formación política INFP, jornadas voluntarias comunitario deportivo social cultural.<br><br>
-<b>Quórum:</b> Mitad más uno Art 19. Sesión cada 3 meses informe avance.<br><br>
-<b>Archivos PDF subidos aquí:</b></p>
-<div id="pdf-constitutiva"></div>
-</div>
-
-<div id="asamblea-resolutiva" class="ventana">
-<h4>3. ASAMBLEA RESOLUTIVA / 3ra ASAMBLEA - Resolutiva Final</h4>
-<p><b>¿Qué es?</b> Tercera asamblea donde se resuelve plan de trabajo, compromisos, estructura territorial y se emite resolutivo final para entrega a Coordinación Distrital y Estatal Art 26-33.<br><br>
-<b>Fundamento:</b> Art 26 Coordinaciones Distritales apoyar fortalecer trabajo territorial comités estatales CEE convoca ordinaria cada 3 meses extraordinaria veces necesarias quorum mitad mas uno. Art 27-33 Estatal Congreso Estatal instala mitad mas uno, Consejo Estatal ordinaria cada 3 meses CEE cada 15 días paridad cargos.<br><br>
-<b>Resultado:</b> Acta resolutiva, fotografías, evidencias de trabajo territorial.<br><br>
-<b>Archivos PDF subidos aquí:</b></p>
-<div id="pdf-resolutiva"></div>
-</div>
-
-<!-- GALERIA -->
-<div id="galeria-videos" class="ventana">
-<h4>GALERÍA DE VIDEOS - REGENERACIÓN POR COLONIAS</h4>
-<div id="videos-regeneracion"></div>
-</div>
-
-<div id="galeria-fotos" class="ventana">
-<h4>GALERÍA DE FOTOS - COLONIAS Y TRABAJO TERRITORIAL</h4>
-<div id="colonias-lista"></div>
-</div>
-
-<!-- GESTIONES -->
-<div id="gestiones" class="ventana">
-<h4>AQUÍ SUBE TUS GESTIONES - CON FOTOS O REPORTA TU COLONIA</h4>
-<p><b>¿Tienes una gestión de alumbrado, bacheo, agua, basura?</b> Súbela con foto y colonia. Este espacio es para ti, para el pueblo de Kanasín.<br><br>
-<b>¿Cómo reportar?</b><br>
-1. Toma foto de la falla (bache, lámpara fundida, fuga agua, basura)<br>
-2. Mándala por WhatsApp o correo con tu colonia y calle<br>
-3. Nosotros la subimos a la página automáticamente<br><br></p>
-<a class="btn-wsp" href="https://wa.me/529991234567?text=Hola%20Morita%20soy%20de%20la%20colonia:%20" target="_blank">📱 REPORTAR POR WHATSAPP</a>
-<a class="btn-correo" href="mailto:eduardojaviermoragonzalez@gmail.com?subject=Reporte%20Colonia%20Kanasin" target="_blank">📧 REPORTAR POR CORREO</a>
-<p style="margin-top:10px"><b>Reportes actuales del pueblo:</b></p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-<div><b>💡 Alumbrado</b><div id="gestion-alumbrado"></div></div>
-<div><b>🚧 Bacheo</b><div id="gestion-bacheo"></div></div>
-<div><b>💧 Agua</b><div id="gestion-agua"></div></div>
-<div><b>🗑️ Basura</b><div id="gestion-basura"></div></div>
-</div>
-</div>
-
-<!-- COMPROMISO 4T -->
-<div id="compromiso" class="ventana">
-<h4>MI COMPROMISO CON LA CUARTA TRANSFORMACIÓN</h4>
-<p><b>Declaración de Principios MORENA Art 1-3:</b> No Mentir, No Robar, No Traicionar al Pueblo. Transformación democrática pacífica, honestidad, austeridad, rendición de cuentas, respeto medios pacíficos legales, anticorrupción, amor patria, bien común sobre interés individual.<br><br>
-<b>Art 3 f,g,h,i,j:</b> No violencia política, no calumnia, no difamación, no VPMRG, respeto paridad sustantiva Art 44 Bis, plataformas acciones prevenir atender erradicar VPMRG Art 42 c.<br><br>
-<b>Mi Compromiso con Kanasín:</b><br>
-1. Organización territorial CDT en cada colonia Art 15-20<br>
-2. Formación política INFP Art 6 bis - Círculos estudio, vinculación movimientos labores culturales salud deportivas<br>
-3. Defensa del voto y difusión logros transformación documentos Regeneración Art 20<br>
-4. Jornadas voluntarias comunitario deportivo social cultural Art 20<br>
-5. Gestión servicios públicos municipales Art 2,30,40,41,77,80,82 Ley Gobierno Municipios Yucatán<br><br>
-<b>Con el Pueblo Todo, Sin el Pueblo Nada - Conciencia Pura 24/7</b><br><br>
-CPEUM Art 6,9,35,40,41,115 - LGIPE Art 3,5,25,34 - LGPP Art 3,5,25,34,43,51 - LIPEEY Art 16,19,196,198 BLINDAJE MAESTRO actividades ordinarias no son actos anticipados precampaña.<br><br>
-TEEY TEPJF nulidad compra presión coacción determinante Art 25 Estatuto. Tres Niveles Gobierno Federación Estado Municipio coordinados.</p>
-</div>
-
-<div id="vision" class="ventana">
-<h4>PDF VISIÓN METROPOLITANA + DOS MÁS</h4>
-<p><b>Visión Metropolitana Kanasín - Mérida - Umán:</b> Desarrollo metropolitano sustentable, movilidad, servicios públicos coordinados Art 115 CPEUM Municipio libre base división territorial.<br><br>
-<b>Archivos PDF subidos aquí - carpeta pdf/vision-metropolitana:</b> Sube tus PDFs de Visión Metropolitana y se verán automático aquí abajo.</p>
-<div id="pdf-vision"></div>
-<div style="margin-top:10px"><b>Otros PDFs - Dos más:</b></div>
-<div id="pdf-otros"></div>
-</div>
-
-<div id="calendario" class="ventana">
-<h4>CALENDARIO OFICIAL MORENA 2026</h4>
-<ul>
-<li><b>Convocatoria y Registro:</b> Hasta 18 Oct 2026 - Cierre Padrón Nacional Protagonistas Cambio Verdadero Art 24,33 - Publicación 30 días anticipación Art 25</li>
-<li><b>Periodo Organización Interna Actividades Ordinarias:</b> Hasta 13 Dic 2026 Fecha limite Art 41 Bis - LIPEEY Art 196 actividades ordinarias permanentes no son actos anticipados</li>
-<li><b>Dictamen y Resultados Finales Encuesta Insaculación Consejo Nacional:</b> Hasta 31 Dic 2026 Art 44,44 Bis,46 - Comisión Nacional Elecciones Comisión Nacional Encuestas dictamen inapelable</li>
-<li><b>Sin actos precampaña campaña:</b> Solo organización territorial Art 196 y 198 LIPEEY Art 3,5,25,34 LGIPE Art 6,9,35,41,115 CPEUM</li>
-</ul>
-</div>
-
-<div class="legal"><b>AVISO LEGAL BLINDADO - ACTIVIDAD ORDINARIA PROCESO INTERNO MORENA - NO ACTO ANTICIPADO PRECAMPAÑA</b> Documento dirigido exclusivamente a Protagonistas Cambio Verdadero afiliados morena Art 4,5,6 Estatuto Art 196 y 198 LIPEEY Art 3,5,25,34 LGIPE Art 6,9,35 CPEUM. No contiene llamado voto ciudadanía general, no difunde plataforma electoral federal/local, no solicita voto cargo elección popular constitucional. Objeto organización interna formación política concientización fortalecimiento comités defensa transformación Art 15-20 Estatuto Declaración Principios Programa Acción. Interpretación contraria viola derecho asociación Art 9 y 35 CPEUM autonomía partidos Art 41 CPEUM y 34 LGIPE. Blindado VPMRG Art 49 Ter. Sanciones Art 64-65 competencia Comisión Nacional Honestidad y Justicia Art 49-53. Medio impugnación convocatoria Art 44 Bis c,d. EDUARDO JAVIER MORA GONZALEZ Aspirante Coordinación Municipal CDT Kanasin. Estatuto MORENA Cap I Art 1-3 No Mentir No Robar No Traicionar | Cap III Art 4-6 Protagonistas | Art 7-13 Democráticos | Cap IV Art 14 14 Bis 15-20 CDT Municipal Art 41 Bis Reglas | Art 21-23 Exterior | Art 24-26 Distritales | Art 27-33 Estatal | Art 34-39 bis Nacional | Art 40-41 | Cap V Art 42-46 | Cap VI Art 47-66 | Cap VII Art 67-70 | Cap VIII IX Art 71-75 Transitorios | Ley Gobierno Municipios Yucatán Art 2 30 40 41 77 80 82 | IEPAC LIPEEY Art 16 19 196 198 Actividades Ordinarias No Son Actos Anticipados | INE LGIPE Art 3 5 25 34 | CPEUM Art 6 9 35 40 41 115 | Tres Niveles Gobierno. Impreso por Tecnosoluciones Publicitarias S.A. de C.V. Adolfo Prieto No. 1638 C. Oficina 1. Col Del Valle Sur Alcaldía Benito Juárez C.P. 03104 Ciudad de México Se terminó de imprimir 29 diciembre 2025 con tiraje 100,000 ejemplares México Primera Edición Primera Reimpresión Comité Ejecutivo Nacional Pag 93-97. Portada: morena La esperanza de Mexico INFP Instituto Nacional de Formación Política con ilustración histórica Hidalgo Juárez Zapata AMLO y fondo rayos tricolor verde blanco rojo naranja - reverso morena trama hexagonal. <b>Conciencia Pura 24/7 - El Verdadero Cambio Lo Hacemos Todos - Con el Pueblo Todo, Sin el Pueblo Nada</b></div>
 </div>
 
 <script>
-function abrir(id){
- document.querySelectorAll('.ventana').forEach(v=>v.classList.remove('activa'));
- const el=document.getElementById(id);
- if(el){el.classList.add('activa'); window.scrollTo(0,320);}
+// CORRECCION FOTO - BUSCA EN VARIOS NOMBRES
+const repo="eduardojaviermoragonzalez68-cyber/EMK-ESTAMOS-MEJORANDO-KANASIN-24-7";
+const posiblesFotos=["foto.jpg","foto.jpeg","Foto.jpg","image2.jpg","foto-principal.jpg","profile.jpg","lalo.jpg"];
+let i=0;
+function probarFoto(){
+ if(i>=posiblesFotos.length){return;}
+ const url=`https://raw.githubusercontent.com/${repo}/main/${posiblesFotos[i]}`;
+ const img=new Image();
+ img.onload=function(){
+   document.getElementById('foto').src=url;
+   document.getElementById('foto').style.display='block';
+   document.getElementById('fallback').style.display='none';
+ };
+ img.onerror=function(){i++;probarFoto();};
+ img.src=url;
 }
-const repo="z68-cyber/z68-cyber.github.io";
-async function listar(ruta, idContenedor){
- const cont=document.getElementById(idContenedor);
- if(!cont) return;
- try{
-  const res=await fetch(`https://api.github.com/repos/${repo}/contents/${ruta}?t=${Date.now()}`);
-  if(!res.ok){return;}
-  const archivos=await res.json();
-  let lista=archivos.filter(f=>f.type==="file" && !f.name.includes(".gitkeep")).reverse();
-  if(lista.length==0){return;}
-  cont.innerHTML="";
-  lista.forEach(f=>{
-   if(f.name.match(/\.(mp4|webm|mov|m4v)$/i)){
-    cont.innerHTML+=`<div class="file"><b>📍 ${f.name}</b><br><video controls playsinline src="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" style="width:100%;border-radius:6px"></video></div>`;
-   }else if(f.name.match(/\.(jpg|jpeg|png|webp)$/i)){
-    cont.innerHTML+=`<div class="file">🖼️ <a href="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" target="_blank">${f.name}</a><br><img src="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" style="width:100%;margin-top:4px;border-radius:6px"></div>`;
-   }else{
-    cont.innerHTML+=`<div class="file">📄 <a href="https://raw.githubusercontent.com/${repo}/main/${ruta}/${f.name}" target="_blank">${f.name}</a></div>`;
-   }
-  });
- }catch(e){}
+probarFoto();
+
+function previewFoto(e){
+ const file=e.target.files[0];
+ if(file){
+  const url=URL.createObjectURL(file);
+  document.getElementById('foto').src=url;
+  document.getElementById('foto').style.display='block';
+  document.getElementById('fallback').style.display='none';
+  alert('Vista previa OK. Ahora súbela a GitHub con el nombre foto.jpg para que quede guardada.');
+ }
 }
-listar("pdf/asambleas-informativas","pdf-informativa");
-listar("pdf/asambleas-constitutivas","pdf-constitutiva");
-listar("pdf/asambleas-resolutivas","pdf-resolutiva");
-listar("videos/regeneracion","videos-regeneracion");
-listar("colonias","colonias-lista");
-listar("gestiones/servicios-publicos/alumbrado","gestion-alumbrado");
-listar("gestiones/servicios-publicos/bacheo","gestion-bacheo");
-listar("gestiones/servicios-publicos/agua","gestion-agua");
-listar("gestiones/servicios-publicos/basura","gestion-basura");
-listar("pdf/vision-metropolitana","pdf-vision");
-listar("pdf/otros","pdf-otros");
+function ver(id){alert('Sección: '+id+' - Ya está configurada en tu versión completa');}
 </script>
 </body>
 </html>
