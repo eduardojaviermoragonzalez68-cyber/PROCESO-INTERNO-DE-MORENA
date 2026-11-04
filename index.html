@@ -32,7 +32,6 @@ body{background:#7a0a12;font-family:Arial,sans-serif}
 .date-box b{display:block;font-size:11px}
 .date-box span{font-weight:900;font-size:14px;color:#7a0a12}
 .legal{background:#111;color:#ccc;font-size:7.5px;padding:10px;text-align:justify;line-height:1.3}
-.btn{background:#25D366;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:900;display:inline-block;margin:6px 0;font-size:12px}
 input[type=file]{width:100%;padding:8px;border:2px dashed #7a0a12;margin:8px 0;border-radius:6px}
 </style>
 </head>
@@ -44,7 +43,7 @@ input[type=file]{width:100%;padding:8px;border:2px dashed #7a0a12;margin:8px 0;b
 <div class="logo-icon">KANASIN</div>
 <div class="logo-text">
 <b>LA CAPITAL DEL PANUCHO, ES</b>
-<span>KANASIN 2024 - 2027 - EDUARDO JAVIER MORA GONZALEZ</span>
+<span>EDUARDO JAVIER MORA GONZALEZ</span>
 </div>
 </div>
 
@@ -66,10 +65,10 @@ input[type=file]{width:100%;padding:8px;border:2px dashed #7a0a12;margin:8px 0;b
 <div style="text-align:center;padding:8px">
 <b style="font-size:12px;color:#7a0a12">☑ Eduardo Mora</b>
 <div class="foto-box">
-<img id="foto" class="foto-perfil" src="" alt="Foto Lalo Mora" onerror="this.style.display='none';document.getElementById('fallback').style.display='flex'">
-<div id="fallback" class="foto-fallback">FOTO<br>LALO MORA<br><small>Sube foto.jpg</small></div>
+<img id="foto" class="foto-perfil" src="" alt="Foto Lalo Mora" style="display:none">
+<div id="fallback" class="foto-fallback">FOTO<br>LALO MORA<br><small>Cargando imagen.jpg</small></div>
 </div>
-<div style="font-size:10px;color:#666">Si no ves la foto, súbela como <b>foto.jpg</b> en tu repositorio</div>
+<div style="font-size:10px;color:#666">Si no ves la foto, verifica que se llame <b>imagen.jpg</b> en tu repositorio</div>
 <input type="file" id="subirFoto" accept="image/*" onchange="previewFoto(event)">
 </div>
 
@@ -90,18 +89,33 @@ input[type=file]{width:100%;padding:8px;border:2px dashed #7a0a12;margin:8px 0;b
 </div>
 
 <script>
-// CORRECCION FOTO - BUSCA EN VARIOS NOMBRES
+// CORREGIDO PARA TU FOTO imagen.jpg - SIN 2024 2027
 const repo="eduardojaviermoragonzalez68-cyber/EMK-ESTAMOS-MEJORANDO-KANASIN-24-7";
-const posiblesFotos=["foto.jpg","foto.jpeg","Foto.jpg","image2.jpg","foto-principal.jpg","profile.jpg","lalo.jpg"];
+// Si tu pagina es la vieja z68-cyber.github.io cambia la linea de arriba por:
+// const repo="z68-cyber/z68-cyber.github.io";
+
+// AQUI ESTA EL NOMBRE QUE ME PEDISTE
+const posiblesFotos=[
+"imagen.jpg",
+"imagen.JPG",
+"imagen. jpg",
+"imagen..jpg",
+"Imagen.jpg",
+"foto.jpg",
+"image2.jpg"
+];
+
 let i=0;
 function probarFoto(){
  if(i>=posiblesFotos.length){return;}
- const url=`https://raw.githubusercontent.com/${repo}/main/${posiblesFotos[i]}`;
+ const nombre = posiblesFotos[i];
+ const url=`https://raw.githubusercontent.com/${repo}/main/${encodeURIComponent(nombre)}?v=${Date.now()}`;
  const img=new Image();
  img.onload=function(){
    document.getElementById('foto').src=url;
    document.getElementById('foto').style.display='block';
    document.getElementById('fallback').style.display='none';
+   console.log("Foto cargada: " + nombre);
  };
  img.onerror=function(){i++;probarFoto();};
  img.src=url;
@@ -115,10 +129,9 @@ function previewFoto(e){
   document.getElementById('foto').src=url;
   document.getElementById('foto').style.display='block';
   document.getElementById('fallback').style.display='none';
-  alert('Vista previa OK. Ahora súbela a GitHub con el nombre foto.jpg para que quede guardada.');
  }
 }
-function ver(id){alert('Sección: '+id+' - Ya está configurada en tu versión completa');}
+function ver(id){alert('Sección: '+id);}
 </script>
 </body>
 </html>
